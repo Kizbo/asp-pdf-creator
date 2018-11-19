@@ -1,0 +1,48 @@
+﻿@model HTML2PDF.Models.Dokument
+
+@{
+    ViewBag.Title = "Dokument";
+}
+
+<h2>Podgląd dokumentu</h2>
+
+<div>
+
+    <br />
+    <hr />
+
+    <dl class="dl-horizontal">
+        <dt>
+            @Html.DisplayNameFor(model => model.Nazwa)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.Nazwa)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.Adres)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.Adres)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.Naglowek)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.Naglowek)
+        </dd>
+
+        <dd>
+            @Html.DisplayFor(model => model.Tresc)
+        </dd>
+
+    </dl>
+</div>
+<p>
+    @Html.ActionLink("Edytuj", "Edit", new { id = Model.Id }) |
+    @Html.ActionLink("Wróć", "Index")
+</p>

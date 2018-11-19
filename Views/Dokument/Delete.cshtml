@@ -1,0 +1,53 @@
+﻿@model HTML2PDF.Models.Dokument
+
+@{
+    ViewBag.Title = "Kasowanie";
+}
+
+<h3>Czy na pewno chcesz usunąć ten dokument?</h3>
+<div>
+
+    <br />
+    <hr />
+
+    <dl class="dl-horizontal">
+        <dt>
+            @Html.DisplayNameFor(model => model.Nazwa)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.Nazwa)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.Adres)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.Adres)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.Naglowek)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.Naglowek)
+        </dd>
+
+        <dd>
+            @Html.DisplayFor(model => model.Tresc)
+        </dd>
+
+    </dl>
+
+    @using (Html.BeginForm())
+    {
+        @Html.AntiForgeryToken()
+
+        <div class="form-actions no-color">
+            <input type="submit" value="Usuń" class="btn btn-default" /> |
+            @Html.ActionLink("Anuluj", "Index")
+        </div>
+    }
+</div>
